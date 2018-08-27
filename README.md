@@ -6,7 +6,9 @@ To carry out architecture search OR architecture evaluation on other datasets:
 
 Architecture Search - datasets = fashion_mnist, cifar10, SVHN:
 
-  cd cnn && python train_search.py --unrolled --dataset='fashion_mnist' 
+```python 
+   cd cnn && python train_search.py --unrolled --dataset='fashion_mnist' 
+```
   
 Architecture Evaluation - datasets = fashion_mnist, cifar10, SVHN:
 
