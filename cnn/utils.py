@@ -71,13 +71,13 @@ def _data_transforms_dataset(args):#new
       mean = (0.28604060411453247,)
       std = (0.3530242443084717,)
       image_size = 28
-      cutout_length = 20
+      cutout_length = 16
 
   elif args.dataset == 'SVHN':
       mean = (0.43768218, 0.44376934, 0.47280428)
       std = (0.1980301, 0.2010157, 0.19703591)
       image_size = 32
-      cutout_length = 16
+      cutout_length = 20
 
   train_transform = transforms.Compose([
     transforms.RandomCrop(image_size, padding=4),# cifar and svhn are 32 , fashion-mnist is 28
