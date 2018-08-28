@@ -2,7 +2,7 @@
 
 ### To carry out architecture search OR architecture evaluation on other datasets:
   - Replace DARTS files in cnn folder with the files in this repository.
-  - Then follow DARTS instructions.
+  - Then follow DARTS instructions (https://github.com/quark0/darts).
 
 
 ### Architecture Search 
