@@ -155,19 +155,24 @@ def create_exp_dir(path, scripts_to_save=None):
       shutil.copyfile(script, dst_file)
       
 #new func
-def dataset_fields(args):
+def dataset_fields(args,train=True):
     if args.dataset == 'cifar10':
         in_channels = 3
         num_classes = 10
         dataset_in_torch = dset.CIFAR10
+        stride_for_aux = 3
     elif args.dataset == 'fashion_mnist':
         in_channels = 1
         num_classes = 10
         dataset_in_torch = dset.FashionMNIST
+        stride_for_aux = 2
     elif args.dataset == 'SVHN':
         in_channels = 3
         num_classes = 10
         dataset_in_torch = dset.SVHN
+        stride_for_aux = 3        
+    if train == False:
+       return in_channels,num_classes,dataset_in_torch,stride_for_aux     
     return in_channels,num_classes,dataset_in_torch
 
 def dataset_split_and_transform(dataset_in_torch,args,train=True):

@@ -67,9 +67,9 @@ def main():
   logging.info('gpu device = %d' % args.gpu)
   logging.info("args = %s", args)
 
-  in_channels, num_classes,dataset_in_torch = utils.dataset_fields(args)  # new
+  in_channels, num_classes, dataset_in_torch ,stride_for_aux = utils.dataset_fields(args , train=False)  # new
   genotype = eval("genotypes.%s" % args.arch)
-  model = Network(args.init_channels,in_channels, num_classes, args.layers, args.auxiliary, genotype)
+  model = Network(args.init_channels,in_channels,stride_for_aux, num_classes, args.layers, args.auxiliary, genotype)
   model = model.cuda()
 
   logging.info("param size = %fMB", utils.count_parameters_in_MB(model))
